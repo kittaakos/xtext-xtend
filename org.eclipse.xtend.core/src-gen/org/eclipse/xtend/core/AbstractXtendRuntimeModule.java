@@ -142,7 +142,7 @@ public abstract class AbstractXtendRuntimeModule extends DefaultXbaseWithAnnotat
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Provider<InternalXtendLexer> provideInternalXtendLexer() {
+	public Provider<? extends InternalXtendLexer> provideInternalXtendLexer() {
 		return LexerProvider.create(InternalXtendLexer.class);
 	}
 	

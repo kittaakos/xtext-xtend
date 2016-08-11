@@ -2293,14 +2293,14 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArrayBracketsParserRuleCall_1_1_0_1 = (RuleCall)cGroup_1_1_0.eContents().get(1);
 		private final RuleCall cXFunctionTypeRefParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		/// *** The following two rules are a workaround for a limitation in serialization logic
+		///*** The following two rules are a workaround for a limitation in serialization logic
 		// *
 		// * Apparently we choose the shortest possible path to create the sequence of unassigned
 		// * tokens between two assigned values. This doesn't work well with Antlr predicates which
 		// * may have lead to another decision path - not necessarily the shortest one in the sense
 		// * of the serializer. That's why we make the type arguments mandatory here so that we
 		// * do no longer have two equally short path's from method identifier to block expression
-		// ************************************************************************************** / TypeReferenceWithTypeArgs
+		// **************************************************************************************/ TypeReferenceWithTypeArgs
 		//types::JvmTypeReference:
 		//	ParameterizedTypeReferenceWithTypeArgs => ({types::JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)*
 		//	| TypeReferenceNoTypeArgs => ({types::JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)+
@@ -2492,7 +2492,7 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValidIDParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cOperatorsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		/// *** The following two rules are a workaround for a limitation in serialiation logic * / FunctionID:
+		///*** The following two rules are a workaround for a limitation in serialiation logic */ FunctionID:
 		//	ValidID | Operators;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4345,14 +4345,14 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeReferenceNoTypeArgsAccess().getRule();
 	}
 	
-	/// *** The following two rules are a workaround for a limitation in serialization logic
+	///*** The following two rules are a workaround for a limitation in serialization logic
 	// *
 	// * Apparently we choose the shortest possible path to create the sequence of unassigned
 	// * tokens between two assigned values. This doesn't work well with Antlr predicates which
 	// * may have lead to another decision path - not necessarily the shortest one in the sense
 	// * of the serializer. That's why we make the type arguments mandatory here so that we
 	// * do no longer have two equally short path's from method identifier to block expression
-	// ************************************************************************************** / TypeReferenceWithTypeArgs
+	// **************************************************************************************/ TypeReferenceWithTypeArgs
 	//types::JvmTypeReference:
 	//	ParameterizedTypeReferenceWithTypeArgs => ({types::JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)*
 	//	| TypeReferenceNoTypeArgs => ({types::JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)+
@@ -4378,7 +4378,7 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterizedTypeReferenceWithTypeArgsAccess().getRule();
 	}
 	
-	/// *** The following two rules are a workaround for a limitation in serialiation logic * / FunctionID:
+	///*** The following two rules are a workaround for a limitation in serialiation logic */ FunctionID:
 	//	ValidID | Operators;
 	public FunctionIDElements getFunctionIDAccess() {
 		return pFunctionID;
@@ -5882,10 +5882,10 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumberAccess().getRule();
 	}
 	
-	/// **
+	///**
 	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes, 
 	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// * / StaticQualifier:
+	// */ StaticQualifier:
 	//	(super::ValidID '::')+;
 	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
 		return gaXbase.getStaticQualifierAccess();
@@ -6078,7 +6078,7 @@ public class XtendGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ML_COMMENT:
-	//	'/ *'->'* /';
+	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaXtype.getML_COMMENTRule();
 	}
